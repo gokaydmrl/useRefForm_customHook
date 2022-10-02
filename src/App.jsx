@@ -12,6 +12,16 @@ export default function App() {
     e.preventDefault();
     const result = getResult();
     setArr((arr) => [...arr, result]);
+
+    // clear inputs either with for loop and vanilla
+
+    // const inputs = document.getElementsByClassName("input");
+    // for (var i = 0; i < inputs.length; i++) {
+    //   inputs[i].value = "";
+    // }
+
+    // or by reseting with useRef
+    formRef.current.reset();
   };
 
   return (
@@ -20,6 +30,7 @@ export default function App() {
       <form ref={formRef}>
         <label>name</label>
         <input
+          id="first"
           className="input"
           type="text"
           name={"isim"}
@@ -28,6 +39,7 @@ export default function App() {
         <label>surname</label>
 
         <input
+          id="second"
           className="input"
           type="text"
           name={"surname"}
@@ -36,6 +48,7 @@ export default function App() {
         <label>email</label>
 
         <input
+          id="third"
           className="input"
           type="email"
           name={"email"}
